@@ -1,2 +1,2 @@
 # gulp-ccr-copy
-Configurable gulp recipe plugin that ...
+Cascading Configurable Gulp Recipe for gulp-chef that copy files.
