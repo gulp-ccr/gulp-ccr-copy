@@ -3,14 +3,13 @@
 
 /**
  * Recipe:
- * copy files
+ *   Copy files
  *
  * Ingredients:
- * gulp-flatten
- * gulp.src()
- * gulp.dest()
+ *   gulp-flatten
+ *   gulp.src()
+ *   gulp.dest()
  *
- * @param done
  * @returns stream
  */
 function copyTask() {

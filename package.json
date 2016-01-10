@@ -1,7 +1,7 @@
 {
   "name": "gulp-ccr-copy",
   "version": "0.1.0",
-  "description": "Cascading Configurable Gulp Recipe for gulp-chef that copy files.",
+  "description": "Copy files and optionally remove or replace relative paths for files. A cascading configurable Gulp recipe for gulp-chef.",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -49,8 +49,6 @@
     "mocha-cases": "^0.1.4"
   },
   "dependencies": {
-    "gulp-ccr-helper": "git+https://github.com/gulp-cookery/gulp-ccr-helper.git",
-    "gulp-flatten": "^0.2.0",
-    "gulp-util": "^3.0.7"
+    "gulp-flatten": "^0.2.0"
   }
 }
