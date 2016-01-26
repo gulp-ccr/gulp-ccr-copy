@@ -27,7 +27,7 @@ function copyTask() {
 
 copyTask.schema = {
 	title: 'copy',
-	description: 'Copy files from `src` to `dest`, optionally remove or replace relative paths for files.',
+	description: 'Copy assets defined by `src` to `dest` folder, optionally remove or replace relative paths for files.',
 	properties: {
 		src: {
 			description: 'Source files to copy.',
