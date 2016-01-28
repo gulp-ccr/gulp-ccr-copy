@@ -1,31 +1,6 @@
-/* eslint consistent-this: 0 */
 'use strict';
 
-/**
- * Recipe:
- *   Copy files
- *
- * Ingredients:
- *   gulp-flatten
- *   gulp.src()
- *   gulp.dest()
- *
- * @returns stream
- */
-function copyTask() {
-	var flatten = require('gulp-flatten');
-
-	var gulp = this.gulp;
-	var config = this.config;
-	var stream = this.upstream || gulp.src(config.src.globs, config.src.options);
-
-	if (config.flatten) {
-		stream = stream.pipe(flatten());
-	}
-	return stream.pipe(gulp.dest(config.dest.path, config.dest.options));
-}
-
-copyTask.schema = {
+var schema = {
 	title: 'copy',
 	description: 'Copy assets defined by `src` to `dest` folder, optionally remove or replace relative paths for files.',
 	properties: {
@@ -72,6 +47,19 @@ copyTask.schema = {
 	required: ['src', 'dest']
 };
 
-copyTask.type = 'task';
+function copy() {
+	var flatten = require('gulp-flatten');
 
-module.exports = copyTask;
+	var gulp = this.gulp;
+	var config = this.config;
+	var stream = this.upstream || gulp.src(config.src.globs, config.src.options);
+
+	if (config.flatten) {
+		stream = stream.pipe(flatten());
+	}
+	return stream.pipe(gulp.dest(config.dest.path, config.dest.options));
+}
+
+module.exports = copy;
+module.exports.schema = schema;
+module.exports.type = 'task';
